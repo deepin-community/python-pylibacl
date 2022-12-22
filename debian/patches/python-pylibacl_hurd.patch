@@ -1,0 +1,33 @@
+Date: Sun, 21 Jun 2009 16:37:01 -0400
+From: Barry deFreese <bdefreese@debian.org>
+To: Debian Bug Tracking System <submit@bugs.debian.org>
+Subject: Bug#534123: python-pylibacl: FTBFS on Debian GNU/Hurd [Patch]
+Reply-To: bdefreese@debian.org, 534123@bugs.debian.org
+Organization: Debian
+User-Agent: Thunderbird 2.0.0.21 (Windows/20090302)
+
+Package: python-pylibacl
+Version: 0.4.0-2
+Severity: normal
+
+Hi,
+
+python-pylibacl currently fails to build on Debian GNU/Hurd because it
+doesn't recognize GNU as an OS.  Attached is a patch to resolve this.
+
+Thanks,
+
+Barry deFreese
+--- a/setup.py
++++ b/setup.py
+@@ -22,6 +22,10 @@
+         macros.append(("HAVE_LEVEL2", None))
+ elif u_sysname == "Darwin":
+     libs.append("pthread")
++elif u_sysname == "GNU":
++    macros.append(("HAVE_LINUX", None))
++    macros.append(("HAVE_LEVEL2", None))
++    libs.append("acl")
+ else:
+     raise ValueError("I don't know your system '%s'."
+                      " Please contact the author" % u_sysname)

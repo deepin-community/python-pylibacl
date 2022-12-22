@@ -1,0 +1,37 @@
+Source: python-pylibacl
+Section: python
+Priority: optional
+Maintainer: Iustin Pop <iustin@debian.org>
+Build-Depends: debhelper-compat (= 13), dh-python,
+ python3-all, python3-all-dev,
+ libacl1-dev, python3-setuptools, python3-sphinx
+Standards-Version: 4.6.0.1
+Homepage: https://pylibacl.k1024.org/
+Vcs-Browser: https://salsa.debian.org/debian/python-pylibacl
+Vcs-Git: https://salsa.debian.org/debian/python-pylibacl.git
+Rules-Requires-Root: no
+
+Package: python3-pylibacl
+Architecture: any
+Depends: ${python3:Depends}, ${shlibs:Depends}, ${misc:Depends}
+Provides: ${python3:Provides}
+Suggests: python-pylibacl-doc
+Multi-Arch: same
+Description: module for manipulating POSIX.1e ACLs (Python3 version)
+ pylibacl is a Python interface to the libacl library. It allows
+ manipulation of the POSIX.1e-compliant filesystem ACLs present
+ in some operating systems (GNU/Linux included).
+ .
+ This package contains the library for Python 3.
+
+Package: python-pylibacl-doc
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}, ${sphinxdoc:Depends}
+Multi-Arch: foreign
+Description: module for manipulating POSIX.1e ACLs (documentation)
+ pylibacl is a Python interface to the libacl library. It allows
+ manipulation of the POSIX.1e-compliant filesystem ACLs present
+ in some operating systems (GNU/Linux included).
+ .
+ This package contains the HTML documentation for the library.

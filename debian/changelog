@@ -1,0 +1,199 @@
+python-pylibacl (0.6.0-2) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since buster:
+    + python-pylibacl-doc: Drop versioned constraint on python-pylibacl in
+      Replaces.
+    + python-pylibacl-doc: Drop versioned constraint on python-pylibacl in
+      Breaks.
+
+  [ Iustin Pop ]
+  * Drop the debug package; no reverse dependencies, so this is
+    straightforward (Closes: #994365).
+  * Bump standards version (no changes).
+
+ -- Iustin Pop <iustin@debian.org>  Fri, 26 Nov 2021 13:13:53 +0100
+
+python-pylibacl (0.6.0-1) unstable; urgency=low
+
+  [ Debian Janitor ]
+  * Use secure URI in Homepage field.
+  * Fix field name case in debian/copyright (Upstream-name => Upstream-Name).
+
+  [ Iustin Pop ]
+  * New upstream version, dropping Python 2 support, and with many other
+    fixes, see the upstream news file.
+  * Workaround issues with 'egg' files, by ignoring them as explained in
+    https://wiki.debian.org/Python/FAQ section 4.
+  * New standards version 4.5.1, no changes needed.
+  * Switch to debhelper v13.
+
+ -- Iustin Pop <iustin@debian.org>  Sun, 29 Nov 2020 03:42:27 +0100
+
+python-pylibacl (0.5.4-3) unstable; urgency=medium
+
+  * Remove python-setuptools dependency, not needed, and allows really
+    fixing the Python 2 bug (Closes: #938073).
+  * Bump standards version (no changes needed).
+
+ -- Iustin Pop <iustin@debian.org>  Mon, 20 Apr 2020 23:37:21 +0200
+
+python-pylibacl (0.5.4-2) unstable; urgency=medium
+
+  * Drop python2 support; Closes: #938073
+
+ -- Sandro Tosi <morph@debian.org>  Tue, 17 Mar 2020 11:54:20 -0400
+
+python-pylibacl (0.5.4-1) unstable; urgency=medium
+
+  * New upstream release, switching build system to Python 3.
+
+ -- Iustin Pop <iustin@debian.org>  Thu, 14 Nov 2019 12:25:21 +0100
+
+python-pylibacl (0.5.3-2) unstable; urgency=medium
+
+  * Refresh packaging for upcoming release:
+    - switch Vcs URLs to Salsa
+    - switch watch file and copyright URLs to https
+    - update standards version (remove 'extra' priority)
+    - drop obsolete Xs-Python* headers
+    - add Rules-Requires-Root: no
+    - switch to debhelper compat level 12
+  * Do a source-full upload to include upstream tarball signature in the
+    archive.
+
+ -- Iustin Pop <iustin@debian.org>  Thu, 03 Jan 2019 10:16:25 +0100
+
+python-pylibacl (0.5.3-1) unstable; urgency=medium
+
+  * Imported Upstream version 0.5.3; main changes:
+    - improve FreeBSD support
+    - fix qualifier overflow issues due to wrong types
+  * Improve hardening of the package (all except pie, which breaks the
+    build)
+  * Switch debian/copyright to dep5
+  * Switch debian packaging repo over to alioth
+  * Switch build system to dh and pybuild
+  * Split documentation into separate package, in order to reduce the
+    dependencies for the python2 package
+  * Add autopkg tests
+
+ -- Iustin Pop <iustin@debian.org>  Sun, 15 May 2016 05:45:03 +0200
+
+python-pylibacl (0.5.2-2) unstable; urgency=medium
+
+  * Fix building with Sphinx 1.3 (Closes: #787172).
+
+ -- Iustin Pop <iustin@debian.org>  Mon, 29 Jun 2015 21:49:45 +0200
+
+python-pylibacl (0.5.2-1) unstable; urgency=medium
+
+  * New minor upstream release: only fixes to unittests
+  * Update watch file to point at the new downloads location
+  * Standards version 3.9.5 (no changes needed)
+
+ -- Iustin Pop <iustin@debian.org>  Mon, 21 Jul 2014 05:22:46 +0200
+
+python-pylibacl (0.5.1-1) unstable; urgency=low
+
+  * New upstream version: bugfixes for refcount leaks and possible
+    NULL-pointer dereferences
+  * Add packages for Python3
+  * Switch from python-support to dh_python2/dh_python3
+  * Standards Version 3.9.3 (no changes needed)
+
+ -- Iustin Pop <iustin@debian.org>  Sun, 13 May 2012 22:19:00 +0200
+
+python-pylibacl (0.5.0-3) unstable; urgency=low
+
+  * Remove old Replaces/Breaks
+
+ -- Iustin Pop <iustin@debian.org>  Tue, 17 Aug 2010 23:18:13 +0200
+
+python-pylibacl (0.5.0-2) unstable; urgency=low
+
+  * Apply a modified version of the Ubuntu patch for enabling debug
+    packages, thanks Bhavani Shankar R (Closes: #591367).
+  * Standards Version 3.9.1 (Use Breaks instead of Conflicts).
+
+ -- Iustin Pop <iustin@debian.org>  Thu, 05 Aug 2010 15:50:28 -0400
+
+python-pylibacl (0.5.0-1) unstable; urgency=low
+
+  * New upstream release
+  * Switch to my Debian address and remove DM-Upload-Allowed
+  * Standards version 3.8.4 (no changes needed)
+  * Switch to dpkg-source 3.0 (quilt) format
+
+ -- Iustin Pop <iustin@debian.org>  Wed, 03 Mar 2010 01:15:18 +0100
+
+python-pylibacl (0.4.0-3) unstable; urgency=low
+
+  * Fixes "FTBFS on Debian GNU/Hurd [Patch]" (added patch by
+    bdefreese@debian.org) (Closes: #534123)
+  * Fixed lintian copyright format warning
+  * Added Vcs-* and DM-* fields to debian/control
+  * Update standard version to 3.8.2 (no changes required)
+
+ -- Iustin Pop <iusty@k1024.org>  Tue, 23 Jun 2009 23:01:01 +0200
+
+python-pylibacl (0.4.0-2) unstable; urgency=low
+
+  * Removed debian/pycompat (not needed with recent pysupport)
+  * Fixed clean rule (Closes: #488763)
+
+ -- Iustin Pop <iusty@k1024.org>  Tue, 01 Jul 2008 11:24:38 +0200
+
+python-pylibacl (0.4.0-1) unstable; urgency=low
+
+  * New Upstream Version, with license changed from GPL to LGPL
+  * Update to Policy 3.8.0
+  * Update the rules file for newer pysupport version
+  * Update debhelper compat level to 7
+  * Added watch file
+
+ -- Iustin Pop <iusty@k1024.org>  Sun, 29 Jun 2008 00:40:25 +0200
+
+python-pylibacl (0.3.0-1) unstable; urgency=low
+
+  * New Upstream Version (more functionality implemented from libacl)
+  * Fix lintian warnings
+
+ -- Iustin Pop <iusty@k1024.org>  Tue, 26 Feb 2008 21:59:12 +0100
+
+python-pylibacl (0.2.2-1) unstable; urgency=low
+
+  * New upstream release (add support for building on GNU/kFreeBSD, removes
+    some warnings) (Closes: #401316).
+  * Acknowledge NMU by Pierre Habouzit. Thanks! (Closes: #373342).
+
+ -- Iustin Pop <iusty@k1024.org>  Sun,  3 Dec 2006 13:56:24 +0100
+
+python-pylibacl (0.2.1-3.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Update package for the last python policy (Closes: #373342).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun,  2 Jul 2006 15:07:24 +0200
+
+python-pylibacl (0.2.1-3) unstable; urgency=low
+
+  * Stop building python 2.2 packages (closes: #351149)
+  * Start building python 2.4 packages
+  * Updated standards version to 3.6.2 (no changes)
+  * Updated FSF address in copyright file
+
+ -- Iustin Pop <iusty@k1024.org>  Wed, 22 Feb 2006 13:13:14 +0200
+
+python-pylibacl (0.2.1-2) unstable; urgency=low
+
+  * Fixed missing dependency on python (closes: #258483)
+  * Updates to standards version 3.6.1
+
+ -- Iustin Pop <iusty@k1024.org>  Sun, 11 Jul 2004 02:14:01 +0300
+
+python-pylibacl (0.2.1-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Iustin Pop <iusty@k1024.org>  Tue, 16 Sep 2003 21:49:37 +0300

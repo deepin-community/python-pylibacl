@@ -1,0 +1,10 @@
+Fix building with Sphinx 1.3
+--- a/Makefile
++++ b/Makefile
+@@ -1,5 +1,5 @@
+ PYTHON        = python3
+-SPHINXOPTS    = -W
++SPHINXOPTS    =
+ SPHINXBUILD   = $(PYTHON) -m sphinx
+ DOCDIR        = doc
+ DOCHTML       = $(DOCDIR)/html

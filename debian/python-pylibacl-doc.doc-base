@@ -1,0 +1,8 @@
+Document: python-pylibacl-manual
+Title: pylibacl Manual
+Abstract: Documents the API of the Python pylibacl library
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-pylibacl-doc/html/index.html
+Files: /usr/share/doc/python-pylibacl-doc/html/*.html
